@@ -85,7 +85,7 @@ std::string Socket::receive()
   int second_last_newline_idx = string_buffer.rfind(trick_delimiter_, string_buffer.size() - 2);
 
   // it means that we can clear carry on buffer
-  if (last_newline_idx == string_buffer.size() - 1)
+  if (static_cast<size_t>(last_newline_idx) == string_buffer.size() - 1)
   {
     carry_on_buffer_[0] = '\0';
   }
